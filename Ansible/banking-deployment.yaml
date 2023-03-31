@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: banking-app
+  labels:
+    app: banking-app
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: banking-app
+  template:
+    metadata:
+      labels: 
+        app: banking-app
+    spec:
+      imagePullSecrets:
+      - name: myregcred
+      containers:
+      - name: banking-app
+        image: iamabhi1997/my-apps:Banking-finance-app-1.0.0
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: banking-app-service
+spec:
+  selector:
+    app: banking-app
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8081
+    nodePort: 30000

@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven'
+    }
+    
+    stages{
+        stage('Git checkout'){
+            steps{
+                script{
+                    echo 'The github repository integrated succefully'
+                }
+            }
+        }
+        stage('Selenium runnable jar running for test the healthcare application'){
+            steps{
+                script{
+                    echo 'Testing the Healthcare app by Seleniun test'
+                    dir('Selenium'){
+                        sh "java -jar healthcare-selenium-runnable.jar"
+                        
+                    }
+                }
+            }
+        }
+
+        
+
+    }
+
+}
