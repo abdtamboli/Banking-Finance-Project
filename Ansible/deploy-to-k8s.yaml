@@ -10,7 +10,7 @@
         kind: Namespace
         state: present
         kubeconfig: /var/jenkins_home/workspace/Banking-capstone-project/Terraform/lke-cluster-config.yaml
-    - name: Deploy Heakthcare Application on Kubernets cluster
+    - name: Deploy Banking Finance Application on Kubernets cluster
       kubernetes.core.k8s:
         src: banking-deployment.yaml
         state: present
