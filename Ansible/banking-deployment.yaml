@@ -23,7 +23,7 @@ spec:
       - name: myregcred
       containers:
       - name: banking-app
-        image: iamabhi1997/my-apps:Banking-finance-app-1.0.0
+        image: iamabhi1997/my-apps:Banking-finance-app-2.0.0
         ports:
         - containerPort: 8081
 ---

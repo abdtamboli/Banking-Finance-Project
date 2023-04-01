@@ -4,7 +4,7 @@ pipeline {
         maven 'Maven'
     }
      environment{
-        IMAGE_NAME = 'Banking-finance-app-1.0.0'
+        IMAGE_NAME = 'Banking-finance-app-2.0.0'
     }
 
     stages{
@@ -79,6 +79,16 @@ pipeline {
             }
         }
 
+        stage('Installing Prometheus and Grafana to monitor deplyed Banking Application'){
+            steps{
+                script{
+                    echo 'Installing Prometheus and Grafana to monitor deplyed Banking Application on Kubernetes cluster'
+                    dir('Prometheus-Grafana'){
+                        sh "bash ./helm-config.sh"   
+                    }
+                }
+            }
+        }
         
 
     }

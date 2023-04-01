@@ -15,7 +15,7 @@ pipeline {
         stage('Selenium runnable jar running for test the banking application'){
             steps{
                 script{
-                    echo 'Testing the Healthcare app by Seleniun test'
+                    echo 'Testing the Banking app by Seleniun test'
                     dir('Selenium'){
                         sh "java -jar banking-selenium-runnable.jar"
                         

@@ -73,7 +73,12 @@
                 <input type="" class="mail_text_1" id="inputNumber" placeholder="Phone Number" name="Phone Number">
                 <input type="" class="mail_text_1" id="inputEmail" placeholder="Email" name="Email">
                 <textarea class="massage_text" id="inputMessage" placeholder="Message" rows="5" name="Message"></textarea>
-                <div class="send_bt"><a href="#" onclick='document.getElementById("message").innerHTML="Email Sent"'>send</a><p id="message"></p></div>
+                <div class="btn_box">
+                  <button id="btn" onclick='document.getElementById("message").innerHTML="Email sent.";'>
+                    SEND
+                  </button>
+                  <p id="message"></p>
+                </div>
               </div>
               
             </div>

@@ -2,4 +2,4 @@
 
 export KUBECONFIG=/var/jenkins_home/workspace/Banking-capstone-project/Terraform/lke-cluster-config.yaml
 kubectl get node
-kubectl get all
+kubectl get all -n test

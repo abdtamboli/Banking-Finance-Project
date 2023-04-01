@@ -1,4 +1,4 @@
-label = "Medicure_Cluster"
+label = "Banking_Cluster"
 k8s_version = "1.25"
 region = "ap-west"
 pools = [
